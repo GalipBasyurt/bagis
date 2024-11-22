@@ -33,7 +33,7 @@ const Gallery = () => {
         retryCount += 1;
         setTimeout(initCarousel, 100);
       } else {
-        console.error("Failed to load Owl Carousel after maximum retries.");
+        console.error("Hata");
       }
     };
 

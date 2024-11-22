@@ -37,13 +37,11 @@ const Donations = () => {
             1830: { items: 3, stagePadding: 371, margin: 30 },
           },
         });
-        console.log("Owl Carousel initialized successfully for Donations!");
       } else if (retryCount < maxRetries) {
         retryCount += 1;
-        console.log("Owl Carousel or jQuery is not loaded. Retrying...");
         setTimeout(initCarousel, 100);
       } else {
-        console.error("Failed to load Owl Carousel after maximum retries.");
+        console.error("Hata");
       }
     };
 
