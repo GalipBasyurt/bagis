@@ -1,16 +1,10 @@
-import localFont from "next/font/local";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Script from "next/script";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Sidebar from "./components/sidebar/Sidebar";
+import Scroll from "./components/scroll/Scroll";
+import TopBar from "./components/top-bar/TopBar";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,8 +14,174 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/assets/images/favicons/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/assets/images/favicons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/assets/images/favicons/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
+
+        <meta
+          name="description"
+          content="Cleenheart modern ve profesyonel bir sivil toplum kuruluşu HTML5 şablonudur."
+        />
+
+        {/*  CSS  */}
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/bootstrap/css/bootstrap.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/bootstrap-select/bootstrap-select.min.css"
+        />
+        <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css" />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/fontawesome/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css" />
+        <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css" />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/nouislider/nouislider.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/nouislider/nouislider.pips.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/tiny-slider/tiny-slider.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/cleenhearts-icons/style.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/swiper/css/swiper-bundle.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/owl-carousel/css/owl.carousel.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/owl-carousel/css/owl.theme.default.min.css"
+        />
+        <link rel="stylesheet" href="/assets/css/cleenhearts.css" />
+
+        {/* scripts */}
+
+        <Script
+          src="/assets/vendors/jquery/jquery-3.7.0.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/bootstrap-select/bootstrap-select.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jarallax/jarallax.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-ui/jquery-ui.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-appear/jquery.appear.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-validate/jquery.validate.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/nouislider/nouislider.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/tiny-slider/tiny-slider.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/wnumb/wNumb.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/swiper/js/swiper-bundle.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/owl-carousel/js/owl.carousel.min.js"
+          strategy="afterInteractive"
+        />
+        <Script src="/assets/vendors/wow/wow.js" strategy="afterInteractive" />
+        <Script
+          src="/assets/vendors/imagesloaded/imagesloaded.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/isotope/isotope.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/countdown/countdown.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-circleType/jquery.circleType.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/vendors/jquery-lettering/jquery.lettering.min.js"
+          strategy="afterInteractive"
+        />
+        <Script src="/assets/js/cleenhearts.js" strategy="afterInteractive" />
+      </head>
+
+      <body className="custom-cursor">
+        <TopBar />
+        <Sidebar />
+        <Scroll />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
